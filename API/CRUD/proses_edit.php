@@ -1,6 +1,6 @@
 <?php
 
-include "koneksi.php";
+include "../../konfigurasi/koneksi.php";
 
 
 if($_SERVER["REQUEST_METHOD"] != "POST"){
@@ -82,7 +82,7 @@ if($koneksi->query($sql)){
     echo "
     <script>
     alert('Akun berhasil diperbarui');
-    window.location='beranda.php';
+    window.location='../../beranda.php';
     </script>
     ";
 

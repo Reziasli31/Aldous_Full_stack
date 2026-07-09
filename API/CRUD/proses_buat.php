@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include '../../konfigurasi/koneksi.php';
 
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     die("Akses ditolak");
@@ -81,7 +81,7 @@ if ($koneksi->query($sql)) {
     echo "
     <script>
     alert('Akun berhasil dibuat');
-    window.location='beranda.php';
+    window.location='../../beranda.php';
     </script>";
 
 } else {

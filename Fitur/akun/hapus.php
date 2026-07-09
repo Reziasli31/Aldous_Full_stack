@@ -1,6 +1,6 @@
 <?php
 
-include "koneksi.php";
+require_once "../../konfigurasi/koneksi.php";
 
 if (!isset($_GET['id'])) {
     die("ID tidak ditemukan");
@@ -73,7 +73,7 @@ $data = $result->fetch_assoc();
 
     <br><br>
 
-    <form action="proses_hapus.php" method="POST">
+    <form action="../../API/CRUD/proses_hapus.php" method="POST">
 
         <input type="hidden" name="id_registrasi" value="<?= $data['id_registrasi']; ?>">
 
@@ -83,7 +83,7 @@ $data = $result->fetch_assoc();
 
         </button>
 
-        <a href="beranda.php">
+        <a href="../../beranda.php">
 
             <button type="button">
 

@@ -1,6 +1,6 @@
 <?php
 
-include "koneksi.php";
+include "../../Konfigurasi/koneksi.php";
 
 if($_SERVER["REQUEST_METHOD"] != "POST"){
     die("Akses ditolak");
@@ -67,7 +67,7 @@ if($koneksi->query($sql_arsip)){
 
         alert('Akun berhasil dihapus dan diarsipkan');
 
-        window.location='beranda.php';
+        window.location='../../beranda.php';
 
         </script>
 

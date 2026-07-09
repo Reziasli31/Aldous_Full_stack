@@ -5,15 +5,19 @@ include "../../Konfigurasi/koneksi.php";
 header("Content-Type: application/json");
 
 $sql = "SELECT 
-            id_registrasi,
-            kode_registrasi,
-            nama_registrasi,
-            Username,
-            urutan_tampil,
-            keterangan,
-            proses,
-            created_at
-        FROM akun_registrasi";
+            arsip_id_berita,
+            id_berita,
+            judul_berita,
+            isi_berita,
+            Gambar,
+            Pembuat,
+            Pengedit,
+            tanggal_buat,
+            tanggal_edit,
+            aksi,
+            pelaku,
+            tanggal_aksi
+        FROM arsip_berita";
 
 $result = $koneksi->query($sql);
 

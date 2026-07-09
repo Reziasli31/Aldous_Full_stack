@@ -8,7 +8,50 @@ if (!isset($_SESSION['login'])) {
 
 include "Konfigurasi/koneksi.php";
 
-$data = $koneksi->query("SELECT * FROM akun_registrasi");
+
+// Hitung total akun
+$total_query = $koneksi->query("
+    SELECT COUNT(*) AS total 
+    FROM akun_registrasi
+");
+
+$total_data = $total_query->fetch_assoc()['total'];
+
+// Hitung total akun yang sudah dihapus
+$arsip_query = $koneksi->query("
+    SELECT COUNT(*) AS total_arsip
+    FROM arsip_registrasi
+");
+
+$total_arsip = $arsip_query->fetch_assoc()['total_arsip'];
+
+
+// Jumlah data per halaman
+$limit = 5;
+
+
+// Ambil halaman sekarang
+if (isset($_GET['halaman'])) {
+
+    $halaman = $_GET['halaman'];
+
+} else {
+
+    $halaman = 1;
+
+}
+
+
+// Hitung data awal
+$awal = ($halaman - 1) * $limit;
+
+
+// Ambil data sesuai halaman
+$data = $koneksi->query("
+    SELECT * FROM akun_registrasi
+    ORDER BY id_registrasi ASC
+    LIMIT $awal,$limit
+");
 ?>
 
 <!DOCTYPE html>
@@ -20,26 +63,116 @@ $data = $koneksi->query("SELECT * FROM akun_registrasi");
 
 <body>
 
-    <h2>Selamat Datang <?php echo $_SESSION['username']; ?></h2>
+    <!-- ================= TOPBAR ================= -->
+
+    <table width="100%" border="1" cellpadding="8">
+
+        <tr>
+
+            <!-- Navigasi -->
+            <td>
+
+                <a href="beranda.php">
+                    Beranda
+                </a>
+
+                |
+
+                <a href="berita.php">
+                    Berita
+                </a>
+
+                |
+
+                <a href="Fitur/Keranjang/keranjang.php">
+                    Keranjang
+                </a>
+
+                |
+
+                <a href="Tujuan_Tugas.php">
+                    Tujuan Tugas
+                </a>
+
+            </td>
+
+
+            <!-- Foto Profil + Logout -->
+            <td width="120" align="center">
+
+                <a href="Fitur/Profil/profil.php">
+
+                    <img src="Assets/Profile/default.png" width="50" height="50" alt="Profil">
+
+                </a>
+
+                <br>
+
+                <a href="index.php">
+
+                    <button>
+                        Logout
+                    </button>
+
+                </a>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+    <br>
+
+    <!-- ========================================= -->
+
+    <h2>
+
+        Selamat Datang
+
+        <?php echo $_SESSION['username']; ?>
+
+    </h2>
 
     <hr>
 
-    <a href="Fitur/buat.php">
-        <button>Tambah Akun</button>
-    </a>
+    <a href="Fitur/Akun/buat.php">
 
-    <a href="index.php">
-        <button>Logout</button>
+        <button>
+
+            Tambah Akun
+
+        </button>
+
     </a>
 
     <br><br>
+    <table border="1" cellpadding="8">
 
+        <tr>
+
+            <td>
+                <b>Total Akun Aktif</b>
+                <br>
+                <?= $total_data; ?>
+            </td>
+
+
+            <td>
+                <b>Total Akun Dihapus</b>
+                <br>
+                <?= $total_arsip; ?>
+            </td>
+
+        </tr>
+
+    </table>
     <table border="1" cellpadding="8">
 
         <tr>
 
             <th>ID</th>
-            <th>username</th>
+            <th>Username</th>
             <th>Kode</th>
             <th>Nama Registrasi</th>
             <th>Urutan</th>
@@ -69,11 +202,16 @@ $data = $koneksi->query("SELECT * FROM akun_registrasi");
 
                 <td>
 
-                    <a href="Fitur/edit.php?id=<?= $row['id_registrasi'] ?>">
+                    <a href="Fitur/Akun/edit.php?id=<?= $row['id_registrasi'] ?>">
+
                         <button>Edit</button>
+
                     </a>
-                    <a href="Fitur/hapus.php?id=<?= $row['id_registrasi'] ?>">
+
+                    <a href="Fitur/Akun/hapus.php?id=<?= $row['id_registrasi'] ?>">
+
                         <button>Hapus</button>
+
                     </a>
 
                 </td>
@@ -85,5 +223,51 @@ $data = $koneksi->query("SELECT * FROM akun_registrasi");
     </table>
 
 </body>
+<br>
+
+<?php
+
+$total_halaman = ceil($total_data / $limit);
+
+?>
+
+
+<?php if ($halaman > 1) { ?>
+
+    <a href="?halaman=<?= $halaman - 1; ?>">
+
+        <button>
+            Kembali
+        </button>
+
+    </a>
+
+<?php } ?>
+
+
+<?php for ($i = 1; $i <= $total_halaman; $i++) { ?>
+
+    <a href="?halaman=<?= $i; ?>">
+
+        <button>
+            <?= $i; ?>
+        </button>
+
+    </a>
+
+<?php } ?>
+
+
+<?php if ($halaman < $total_halaman) { ?>
+
+    <a href="?halaman=<?= $halaman + 1; ?>">
+
+        <button>
+            Selanjutnya
+        </button>
+
+    </a>
+
+<?php } ?>
 
 </html>

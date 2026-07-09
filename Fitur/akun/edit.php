@@ -1,6 +1,6 @@
 <?php
 
-include "koneksi.php";
+include "../../konfigurasi/koneksi.php";
 
 $id = $_GET['id'];
 $query = "SELECT * FROM akun_registrasi 
@@ -13,11 +13,11 @@ $data = $result->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html>  
 
 <body>
     <h2>Edit Akun</h2>
-    <form action="proses_edit.php" method="POST">
+    <form action="../../API/CRUD/proses_edit.php" method="POST">
         <input type="hidden" name="id_registrasi" value="<?= $data['id_registrasi']; ?>">
 
         Username:
@@ -72,7 +72,7 @@ $data = $result->fetch_assoc();
         <button type="submit">
             Simpan Perubahan
         </button>
-        <a href="beranda.php">
+        <a href="../../beranda.php">
             <button type="button">
                 Batal
             </button>

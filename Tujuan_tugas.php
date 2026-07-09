@@ -11,96 +11,120 @@
 
     <hr>
 
-    <!-- FOTO PROFIL -->
     <h2>Pembuat Aplikasi</h2>
 
-    <img src="assets/profile/Rezi.jpeg"
-         width="180"
-         height="220"
-         alt="Foto Profil">
+    <img src="assets/profile/Rezi.jpeg" width="180" height="220" alt="Foto Profil">
 
     <br><br>
 
     <b>Nama :</b> Muhammad Fachrezi
     <br>
 
-    <b>NIM :</b> ISI NIM ANDA
+    <b>NIM :</b> C030324132
     <br>
 
-    <b>Kelas :</b> ISI KELAS
+    <b>Kelas :</b> TI-4A
+
     <br><br>
 
     <hr>
 
-    <!-- JUDUL -->
+
     <h2>Judul Proyek</h2>
 
     <p>
         Sistem Informasi Registrasi Berbasis Web
     </p>
 
+
     <hr>
 
-    <!-- PENJELASAN -->
-    <h2>Penjelasan</h2>
+
+    <h2>Tujuan Pembuatan</h2>
 
     <p>
         Website ini dibuat sebagai proyek Ujian Akhir Semester
+        untuk menerapkan pengembangan aplikasi berbasis web
         menggunakan PHP Native dan MySQL.
-
-        Sistem memiliki beberapa fitur utama, yaitu:
-
     </p>
 
-    <ul>
+    <p>
+        Sistem ini menerapkan konsep pengelolaan data,
+        autentikasi pengguna, serta penyimpanan
+        dan penyajian data melalui API JSON.
+    </p>
 
-        <li>Login Multi Level</li>
-
-        <li>CRUD Akun</li>
-
-        <li>Arsip Data</li>
-
-        <li>Hak Akses Admin, Registrasi Khusus, dan Registrasi Umum</li>
-
-        <li>REST API (JSON)</li>
-
-        <li>Manajemen Berita</li>
-
-    </ul>
 
     <hr>
 
-    <!-- GITHUB -->
+
+    <h2>Teknologi yang Digunakan</h2>
+
+    <ul>
+
+        <li>PHP Native</li>
+
+        <li>MySQL Database</li>
+
+        <li>HTML</li>
+
+        <li>JavaScript</li>
+
+        <li>REST API JSON</li>
+
+    </ul>
+
+
+    <hr>
+
+
     <h2>Repository GitHub</h2>
 
-    <a href="https://github.com/USERNAME/REPOSITORY"
-       target="_blank">
+    <a href="https://github.com/Reziasli31/Aldous_Full_stack.git" target="_blank">
 
         Klik di sini untuk membuka GitHub
 
     </a>
 
+
     <hr>
 
-    <!-- YOUTUBE -->
+
     <h2>Video Demonstrasi</h2>
 
-    <a href="https://www.youtube.com/"
-       target="_blank">
+    <a href="https://www.youtube.com/live/XaY0c3NZkT4?si=eqkt9APPXWVsGXbL" target="_blank">
 
         Klik di sini untuk menonton video demonstrasi
 
     </a>
 
+
     <hr>
+
+    <hr>
+
+    <a href="beranda.php">
+
+        <button>
+            Kembali ke Beranda
+        </button>
+
+    </a>
+
+    <br><br>
 
     <center>
 
-        <p>
-            © 2026 - Sistem Informasi Registrasi
-        </p>
 
-    </center>
+
+        <center>
+
+            <p>
+                © 2026 - Sistem Informasi Registrasi
+            </p>
+
+        </center>
+
 
 </body>
 
