@@ -7,7 +7,7 @@ if (!isset($_SESSION['login'])) {
 }
 
 include "Konfigurasi/koneksi.php";
-
+include "Navigasi/topbar.php";
 
 // Hitung total akun
 $total_query = $koneksi->query("
@@ -59,75 +59,10 @@ $data = $koneksi->query("
 
 <head>
     <title>Beranda</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
-
-    <!-- ================= TOPBAR ================= -->
-
-    <table width="100%" border="1" cellpadding="8">
-
-        <tr>
-
-            <!-- Navigasi -->
-            <td>
-
-                <a href="beranda.php">
-                    Beranda
-                </a>
-
-                |
-
-                <a href="berita.php">
-                    Berita
-                </a>
-
-                |
-
-                <a href="Fitur/Keranjang/keranjang.php">
-                    Keranjang
-                </a>
-
-                |
-
-                <a href="Tujuan_Tugas.php">
-                    Tujuan Tugas
-                </a>
-
-            </td>
-
-
-            <!-- Foto Profil + Logout -->
-            <td width="120" align="center">
-
-                <a href="Fitur/Profil/profil.php">
-
-                    <img src="Assets/Profile/default.png" width="50" height="50" alt="Profil">
-
-                </a>
-
-                <br>
-
-                <a href="index.php">
-
-                    <button>
-                        Logout
-                    </button>
-
-                </a>
-
-            </td>
-
-        </tr>
-
-    </table>
-
-    <br>
-
-    <!-- ========================================= -->
-
     <h2>
-
         Selamat Datang
 
         <?php echo $_SESSION['username']; ?>

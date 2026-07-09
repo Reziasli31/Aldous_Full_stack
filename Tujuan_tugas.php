@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Tujuan Tugas</title>
 </head>
 

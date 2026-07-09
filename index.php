@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
     <title>Login Registrasi</title>
+
 </head>
-<body>
 
-<h2>LOGIN</h2>
+<body class="login-page">
 
-<form action="login.php" method="POST">
 
-    <label>Username</label><br>
-    <input type="text" name="username" required><br><br>
+<div class="login-box">
 
-    <label>Password</label><br>
-    <input type="password" name="password" required><br><br>
 
-    <button type="submit">LOGIN</button>
+    <h2>LOGIN</h2>
 
-</form>
+
+    <form action="login.php" method="POST">
+
+
+        <label>Username</label>
+
+        <input type="text" name="username" required>
+
+
+
+        <label>Password</label>
+
+        <input type="password" name="password" required>
+
+
+
+        <button type="submit">
+            LOGIN
+        </button>
+
+
+    </form>
+
+
+</div>
+
 
 </body>
 </html>

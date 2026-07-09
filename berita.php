@@ -1,6 +1,7 @@
 <?php
 
 include "Konfigurasi/koneksi.php";
+include "Navigasi/topbar.php";
 $data = $koneksi->query(
     "SELECT * FROM berita
      ORDER BY tanggal_buat DESC"
@@ -12,100 +13,198 @@ $data = $koneksi->query(
 <html>
 
 <head>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
-<title>Berita</title>
+
+        .dropbtn {
+
+            padding: 8px 15px;
+            cursor: pointer;
+
+        }
+
+
+        /* isi dropdown */
+
+        .dropdown-content {
+
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid black;
+            min-width: 150px;
+
+        }
+
+
+        /* pilihan */
+
+        .dropdown-content a {
+
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+            color: black;
+
+        }
+
+
+        /* saat diarahkan */
+
+        .dropdown-content a:hover {
+
+            background-color: #ddd;
+
+        }
+
+
+        /* munculkan menu */
+
+        .dropdown:hover .dropdown-content {
+
+            display: block;
+
+        }
+    </style>
+    <title>Berita</title>
 
 </head>
 
 
 <body>
 
+    <div class="dropdown">
 
-<h2>Daftar Berita</h2>
-
-<hr>
-
-
-<?php while($row = $data->fetch_assoc()){ ?>
+        <button class="dropbtn">
+            Kelola Berita ▼
+        </button>
 
 
-<a href="detail_berita.php?id=<?= $row['id_berita']; ?>"
-style="text-decoration:none;color:black;">
+        <div class="dropdown-content">
+
+            <a href="Fitur/berita/buat.php">
+                Tambah Berita
+            </a>
+
+            <a href="Fitur/berita/edit.php">
+                Edit Berita
+            </a>
+
+            <a href="Fitur/berita/hapus.php">
+                Hapus Berita
+            </a>
+
+        </div>
+
+    </div>
+
+    <h2>Daftar Berita</h2>
+
+    <hr>
 
 
-<table width="100%" border="1" cellpadding="10">
-
-<tr>
+    <?php while ($row = $data->fetch_assoc()) { ?>
 
 
-<!-- GAMBAR KIRI -->
-
-<td width="200">
-
-<img src="assets/gambar/<?= $row['Gambar']; ?>"
-width="180"
-height="120">
-
-</td>
+        <a href="Fitur/berita/detail_berita.php?id=<?= $row['id_berita']; ?>" style="text-decoration:none;color:black;">
 
 
-<!-- ISI KANAN -->
+            <table width="100%" border="1" cellpadding="10">
 
-<td>
-
-
-<h2>
-
-<?= $row['judul_berita']; ?>
-
-</h2>
+                <tr>
 
 
-<p style="text-align:justify;">
+                    <!-- GAMBAR KIRI -->
 
-<?= substr($row['isi_berita'],0,250); ?>
+                    <td width="200">
 
-...
+                        <img src="assets/gambar/<?= $row['Gambar']; ?>" width="180" height="120">
 
-</p>
-
-
-<br>
+                    </td>
 
 
-<b>
-Tanggal:    
-</b>
+                    <!-- ISI KANAN -->
 
-<?= $row['tanggal_buat']; ?>
+                    <td>
 
 
-<br>
+                        <h2>
+
+                            <?= $row['judul_berita']; ?>
+
+                        </h2>
 
 
-<b>
-Pembuat:
-</b>
+                        <p style="text-align:justify;">
 
-<?= $row['pembuat']; ?>
+                            <?= substr($row['isi_berita'], 0, 250); ?>
 
+                            ...
 
-</td>
-
-
-</tr>
+                        </p>
 
 
-</table>
+                        <br>
 
 
-</a>
+                        <b>
+                            Tanggal:
+                        </b>
+
+                        <?= $row['tanggal_buat']; ?>
 
 
-<br>
+                        <br>
 
 
-<?php } ?>
+                        <b>
+                            Pembuat:
+                        </b>
+
+                        <?= $row['pembuat']; ?>
+
+
+                        <br>
+
+
+                        <b>
+                            Pengedit:
+                        </b>
+
+                        <?= $row['pengedit'] ?? '-'; ?>
+
+
+                        <br>
+
+
+                        <b>
+                            Tanggal Edit:
+                        </b>
+
+                        <?= $row['tanggal_edit'] ?? '-'; ?>
+
+
+                    </td>
+
+
+                </tr>
+
+
+            </table>
+
+
+        </a>
+
+
+        <br>
+
+
+    <?php } ?>
 
 
 </body>
