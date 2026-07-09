@@ -7,13 +7,13 @@
         <!-- Navigasi -->
         <td class="menu">
 
-            <a href="/LALALA/beranda.php">
+            <a href="/Homeless_media/beranda.php">
                 Beranda
             </a>
 
             <span>|</span>
 
-            <a href="/LALALA/berita.php">
+            <a href="/Homeless_media/berita.php">
                 Berita
             </a>
 
@@ -23,9 +23,9 @@
         <!-- Foto Profil + Logout -->
         <td class="profile-menu">
 
-            <a href="/LALALA/Fitur/Profil/profil.php">
+            <a href="/Homeless_media/Fitur/Profil/profil.php">
 
-                <img src="/LALALA/assets/profile/default.jpg" 
+                <img src="/Homeless_media/assets/profile/default.jpg" 
                      width="45" 
                      height="45" 
                      alt="Profil">
@@ -33,7 +33,7 @@
             </a>
 
 
-            <a href="/LALALA/index.php">
+            <a href="/Homeless_media/index.php">
 
                 <button>
                     Logout
