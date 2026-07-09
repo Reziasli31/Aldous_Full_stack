@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
     <link rel="stylesheet" href="assets/css/style.css">
@@ -11,37 +12,48 @@
 <body class="login-page">
 
 
-<div class="login-box">
+    <div class="login-box">
 
 
-    <h2>LOGIN</h2>
+        <h2>LOGIN</h2>
 
 
-    <form action="login.php" method="POST">
+        <form action="login.php" method="POST">
 
 
-        <label>Username</label>
+            <label>Username</label>
 
-        <input type="text" name="username" required>
-
-
-
-        <label>Password</label>
-
-        <input type="password" name="password" required>
+            <input type="text" name="username" required>
 
 
 
-        <button type="submit">
-            LOGIN
-        </button>
+            <label>Password</label>
+
+            <input type="password" name="password" required>
 
 
-    </form>
+
+            <button type="submit">
+                LOGIN
+            </button>
+
+            <br><br>
+
+            <a href="pengunjung.php">
+
+                <button type="button">
+                    Pengunjung
+                </button>
+
+            </a>
 
 
-</div>
+        </form>
+
+
+    </div>
 
 
 </body>
+
 </html>

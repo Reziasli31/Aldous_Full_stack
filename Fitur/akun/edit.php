@@ -16,6 +16,7 @@ $data = $result->fetch_assoc();
 <html>  
 
 <body>
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <h2>Edit Akun</h2>
     <form action="../../API/CRUD/proses_edit.php" method="POST">
         <input type="hidden" name="id_registrasi" value="<?= $data['id_registrasi']; ?>">
@@ -23,7 +24,7 @@ $data = $result->fetch_assoc();
         Username:
         <br>
         <input type="text" name="username" value="<?= $data['username']; ?>" required
-            oninvalid="this.setCustomValidity('Username harus diisi')" oninput="this.setCustomValidity('')">"><br><br>
+            oninvalid="this.setCustomValidity('Username harus diisi')" oninput="this.setCustomValidity('')"><br><br>
         Password:
         <br>
         <input type="password" name="password" value="<?= $data['password']; ?>" required

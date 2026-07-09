@@ -2,14 +2,14 @@
 <html>
 
 <head>
-
+    
     <title>Tambah Berita</title>
 
 </head>
 
 
 <body>
-
+<link rel="stylesheet" href="../../assets/css/style.css">
 
 <h2>Tambah Berita</h2>
 

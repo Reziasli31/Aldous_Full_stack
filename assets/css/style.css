@@ -283,6 +283,26 @@ tr:hover {
 
 }
 
+.login-error {
+
+    background:#ead7c0;
+
+    color:#5a3218;
+
+    border:1px solid #8b5a2b;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
 
 
 /* FOTO */

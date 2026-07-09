@@ -28,7 +28,7 @@ if (!$row) {
 </head>
 
 <body>
-
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <a href="edit.php">
 
         <button>

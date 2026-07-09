@@ -23,7 +23,7 @@ $data = $koneksi->query(
 
 
 <body>
-
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <a href="../../berita.php">
         <button>
             Kembali ke Berita

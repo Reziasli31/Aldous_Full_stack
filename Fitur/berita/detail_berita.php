@@ -36,7 +36,7 @@ if (!$row) {
 <head>
 
     <title>
-                <?= $row['judul_berita']; ?>
+        <?= $row['judul_berita']; ?>
     </title>
 
 
@@ -44,9 +44,7 @@ if (!$row) {
 
 
 <body>
-
-
-
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <a href="../../berita.php">
 
         <button>
@@ -59,7 +57,7 @@ if (!$row) {
 
     <h1>
 
-                <?= $row['judul_berita']; ?>
+        <?= $row['judul_berita']; ?>
 
     </h1>
 
@@ -79,7 +77,7 @@ if (!$row) {
     <p style="text-align:justify;">
 
 
-                <?= nl2br($row['isi_berita']); ?>
+        <?= nl2br($row['isi_berita']); ?>
 
 
     </p>
@@ -95,7 +93,7 @@ if (!$row) {
 
     <b>Tanggal Dibuat :</b>
 
-        <?= $row['tanggal_buat']; ?>
+    <?= $row['tanggal_buat']; ?>
 
 
     <br>
@@ -103,7 +101,7 @@ if (!$row) {
 
     <b>Pembuat :</b>
 
-        <?= $row['pembuat']; ?>
+    <?= $row['pembuat']; ?>
 
 
     <br>
@@ -112,7 +110,7 @@ if (!$row) {
 
     <b>Pengedit :</b>
 
-        <?= empty($row['pengedit']) ? '-' : $row['pengedit']; ?>
+    <?= empty($row['pengedit']) ? '-' : $row['pengedit']; ?>
 
 
     <br>
@@ -121,7 +119,7 @@ if (!$row) {
 
     <b>Tanggal Edit :</b>
 
-        <?= empty($row['tanggal_edit']) ? '-' : $row['tanggal_edit']; ?>
+    <?= empty($row['tanggal_edit']) ? '-' : $row['tanggal_edit']; ?>
 
 
 

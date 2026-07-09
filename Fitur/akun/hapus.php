@@ -32,7 +32,7 @@ $data = $result->fetch_assoc();
 </head>
 
 <body>
-
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <h2>Konfirmasi Hapus Akun</h2>
 
     <hr>

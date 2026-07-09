@@ -2,7 +2,7 @@
 <html>
 
 <body>
-
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <h2>Tambah Akun</h2>
 
     <form action="../../API/CRUD/proses_buat.php" method="POST">
